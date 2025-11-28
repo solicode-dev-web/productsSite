@@ -1,0 +1,193 @@
+[
+  {
+    "id": 1,
+    "title": "highlighter",
+    "price":634 ,
+    "categorie":"makeup",
+    "description": "Dior highlighter",
+    "image": "dior.jpg"
+  },
+  {
+    "id": 8,
+    "title": "cleansing oil",
+    "price":240 ,
+    "categorie":"skincare",
+    "description": "centella-cleansing oil",
+    "image": "Centella.jpg"
+  },
+   {
+    "id": 22,
+    "title": "parfume Black Opium",
+    "price":1000 ,
+    "categorie":"parfume",
+    "description": "Black Opium by Yves Saint Laurent",
+    "image": "yves.jpg"
+  },
+  {
+    "id": 3,
+    "title": "lip Glos",
+    "price":350 ,
+    "categorie":"makeup",
+    "description": "Dior lip glos",
+    "image": "lipglos.jpg"
+  },
+ {
+    "id": 5,
+    "title": "powder",
+    "price":450 ,
+    "categorie":"makeup",
+    "description": "powder hudabeauty",
+    "image": "powderhuda.jpg"
+  },
+   {
+    "id": 6,
+    "title": "anua serum",
+    "price":220 ,
+    "categorie":"skincare",
+    "description": "anua serum Niacinamide ",
+    "image": "Anuaserum.jpg"
+  },
+   {
+    "id": 24,
+    "title": " primer elf",
+    "price":299,
+    "categorie":"makeup",
+    "description": "primer blue elf ",
+    "image": "elff.jpg"
+  },
+   {
+    "id": 25,
+    "title": "the brow Glue ",
+    "price":170 ,
+    "categorie":"makeup",
+    "description": "the brow gel for eyebrow ",
+    "image": "GEL.jpg"
+  },
+   {
+    "id": 26,
+    "title": "lips Balms-carmex",
+    "price":170 ,
+    "categorie":"makeup",
+    "description": "These lip balms do more than just hydrate ",
+    "image": "carmex.png"
+  },
+   {
+    "id": 7,
+    "title": "correcture dark circles",
+    "price":199 ,
+    "categorie":"skincare",
+    "description": "AXIS-Y • Dark Spot Correcting Glow Serum",
+    "image": "axiy.jpg"
+  },
+     {
+    "id": 19,
+    "title": "Lip gloss NYX",
+    "price":140 ,
+    "categorie":"makeup",
+    "description": "NYX-huile a lèvres fat oil",
+    "image": "nyx.jpg"
+  },
+  {
+    "id": 9,
+    "title": "parfume dior",
+    "price":1335 ,
+    "categorie":"parfume",
+    "description": "miss Dior parfume fruity",
+    "image": "parfumedior.jpg"
+  },
+  {
+    "id": 23,
+    "title": "Nars concealer",
+    "price":398 ,
+    "categorie":"makeup",
+    "description": "NARS Soft Matte Complete Concealer in shade Vanilla",
+    "image": "narscc.jpg"
+  },
+  {
+    "id": 10,
+    "title": "parfume prada",
+    "price":1960 ,
+    "categorie":"parfume",
+    "description": "prada parfume 50 ml ",
+    "image": "prada.jpg"
+  },
+   {
+    "id": 4,
+    "title": "mascara",
+    "price":140 ,
+    "categorie":"makeup",
+    "description": "mascara maybelline",
+    "image": "maybelline.jpg"
+  },
+  {
+    "id": 11,
+    "title": "parfume Coco chanel",
+    "price":1200 ,
+    "categorie":"parfume",
+    "description": "coco chanel  parfume ",
+    "image": "cocochanel.png"
+  },
+  {
+    "id": 21,
+    "title": "Palette",
+    "price":900 ,
+    "categorie":"makeup",
+    "description": "Makeup forever hd skin blush &glow -palette blush & Highlighter clair a meduim",
+    "image": "forever.jpg"
+  },
+  {
+    "id": 12,
+    "title": "YSL Beauty parfume",
+    "price":1399 ,
+    "categorie":"parfume",
+    "description": "parfume YVES saint laurent ",
+    "image": "yys.jpg"
+  },{
+    "id": 13,
+    "title": "rhode-lipstick",
+    "price":188 ,
+    "categorie":"makeup",
+    "description": "1pc rhode lip gloss  sheer pink & toast & raspberry jelly & espresso ",
+    "image": "rhode.jpg"
+  },
+  {
+    "id": 14,
+    "title": "serum vitamine C",
+    "price":288 ,
+    "categorie":"skincare",
+    "description": "EqqualBerry |Vitamine illuminating ",
+    "image": "equallberry.jpg"
+  },
+{
+    "id": 16,
+    "title": "Ordinary Glycolic Toner",
+    "price":200 ,
+    "categorie":"skincare",
+    "description": "The Ordinary Glycolic Acid 7% Toner  ",
+    "image": "ordinary.jpg"
+  },
+  {
+    "id": 17,
+    "title": "Nars concealer",
+    "price":399 ,
+    "categorie":"makeup",
+    "description": "Nars Radiant Creamy Concealer ",
+    "image": "nars.jpg"
+  },
+  {
+    "id": 18,
+    "title": "Ordinary-serum",
+    "price":299 ,
+    "categorie":"skincare",
+    "description": "the ordinary AHA 30% + BHA 3% peeling solution ",
+    "image": "ordinary2.jpg"
+  },
+   {
+    "id": 20,
+    "title": "TARTE concealer",
+    "price":340 ,
+    "categorie":"makeup",
+    "description": "TARTE shap anticernes",
+    "image": "tarte.jpg"
+  }
+]

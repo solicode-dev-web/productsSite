@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Makeup",
+    "slug": "makeup",
+    "description": "Maquillage haut de gamme, teint, yeux et lèvres de luxe",
+    "product_count": 14
+  },
+  {
+    "id": 2,
+    "name": "Skincare",
+    "slug": "skincare",
+    "description": "Soins de la peau avancés, sérums et huiles nettoyantes de Corée et France",
+    "product_count": 6
+  },
+  {
+    "id": 3,
+    "name": "Parfum",
+    "slug": "parfum",
+    "description": "Fragrances d'exception des plus grandes maisons de haute parfumerie",
+    "product_count": 4
+  }
+]

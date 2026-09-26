@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BeautyHub Admin | Dashboard de Gestion CRUD</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- 1. Admin Header Navigation -->
+  <header class="admin-header">
+    <div class="container admin-nav">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">B</div>
+          <span class="logo-text">BeautyHub</span>
+        </a>
+        <span class="admin-title-badge"><i class="fa-solid fa-user-shield"></i> Dashboard Admin</span>
+      </div>
+
+      <a href="index.html" class="back-store-btn">
+        <i class="fa-solid fa-store"></i> Voir la Boutique Client
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 2. Stats Dashboard Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <div>
+          <div class="stat-value" id="statTotalProducts">0</div>
+          <div class="stat-label">Produits Totaux</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div>
+          <div class="stat-value" id="statTotalCategories">0</div>
+          <div class="stat-label">Catégories</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-earth-europe"></i></div>
+        <div>
+          <div class="stat-value" id="statFranceProducts">0</div>
+          <div class="stat-label">Produits France 🇫🇷</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-earth-asia"></i></div>
+        <div>
+          <div class="stat-value" id="statKoreaProducts">0</div>
+          <div class="stat-label">Produits Corée 🇰🇷</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Admin Navigation Tabs & Action Controls -->
+    <div class="admin-tabs-bar">
+      <div class="tab-btns">
+        <button class="tab-btn active" id="tabProductsBtn" onclick="switchAdminTab('products')">
+          <i class="fa-solid fa-box"></i> Gestion des Produits
+        </button>
+        <button class="tab-btn" id="tabCategoriesBtn" onclick="switchAdminTab('categories')">
+          <i class="fa-solid fa-tags"></i> Gestion des Catégories
+        </button>
+      </div>
+
+      <div>
+        <button class="btn-add-prominent" id="addNewItemBtn" onclick="openAddModal()">
+          <i class="fa-solid fa-plus-circle"></i> + Ajouter un Produit
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. Tab 1: Products Table -->
+    <div id="productsTabSection">
+      <div class="table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Produit</th>
+              <th>Marque</th>
+              <th>Catégorie</th>
+              <th>Origine</th>
+              <th>Prix (DH)</th>
+              <th>Stock</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminProductsTableBody">
+            <!-- Dynamic Rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 5. Tab 2: Categories Table -->
+    <div id="categoriesTabSection" style="display: none;">
+      <div class="table-container">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom de Catégorie</th>
+              <th>Slug</th>
+              <th>Description</th>
+              <th>Produits Liés</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminCategoriesTableBody">
+            <!-- Dynamic Rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- 6. PRODUCT MODAL (Add / Edit) -->
+  <div class="modal-overlay" id="productModalOverlay">
+    <div class="admin-modal-body">
+      <button class="modal-close-btn" onclick="closeProductModal()">&times;</button>
+      <h3 class="modal-header-title" id="productModalTitle">Ajouter un Nouveau Produit</h3>
+      <p class="modal-header-subtitle">Complétez les informations ci-dessous pour publier un produit dans la boutique.</p>
+
+      <form id="productForm">
+        <input type="hidden" id="prodId" value="" />
+
+        <!-- Section 1: Informations Générales -->
+        <div class="form-section-title"><i class="fa-solid fa-info-circle"></i> 1. Informations Générales</div>
+        
+        <div class="form-group">
+          <label class="form-label">Titre du produit *</label>
+          <input type="text" id="prodTitle" class="form-control" required placeholder="ex: Sérum Éclat Niacinamide 10%" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Catégorie *</label>
+          <select id="prodCategory" class="form-control" required>
+            <!-- Dynamic Options -->
+          </select>
+        </div>
+
+        <!-- Section 2: Tarification -->
+        <div class="form-section-title"><i class="fa-solid fa-tag"></i> 2. Tarification</div>
+        
+        <div class="form-group">
+          <label class="form-label">Prix Vente (DH) *</label>
+          <input type="number" step="0.01" id="prodPrice" class="form-control" required placeholder="ex: 350.00" />
+        </div>
+
+        <!-- Section 3: Visuel Image & Stock -->
+        <div class="form-section-title"><i class="fa-solid fa-image"></i> 3. Visuel Image & Stock</div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label">Photo du Produit (Téléverser ou Fichier)</label>
+            <div class="upload-preview-box" onclick="document.getElementById('prodImageFileInput').click()">
+              <img id="prodImagePreviewImg" src="images/dior.jpg" class="upload-preview-img" alt="Aperçu" onerror="this.src='images/dior.jpg'" />
+              <div class="upload-icon-label">
+                <i class="fa-solid fa-cloud-arrow-up" style="font-size: 1.2rem;"></i>
+                <span>Cliquer pour ajouter une photo</span>
+              </div>
+            </div>
+            <input type="file" id="prodImageFileInput" accept="image/*" style="display: none;" />
+            <input type="text" id="prodImage" class="form-control" required placeholder="nom_image.jpg" style="margin-top: 0.5rem;" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Quantité en Stock</label>
+            <input type="number" id="prodStock" class="form-control" value="50" placeholder="50" />
+          </div>
+        </div>
+
+        <!-- Section 4: Description -->
+        <div class="form-section-title"><i class="fa-solid fa-align-left"></i> 4. Description & Promotion</div>
+
+        <div class="form-group">
+          <label class="form-label">Description Détaillée</label>
+          <textarea id="prodDescription" class="form-control" rows="3" placeholder="Présentation et bienfaits du produit..."></textarea>
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0;">
+          <input type="checkbox" id="prodFeatured" style="width: 20px; height: 20px; accent-color: var(--accent-rose-bright);" />
+          <label for="prodFeatured" class="form-label" style="margin-bottom:0; cursor:pointer; font-weight:700; color:#fff;">Mettre en avant comme Produit Vedette ⭐</label>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1.2rem; padding: 1rem;">
+          <i class="fa-solid fa-check-circle"></i> Enregistrer & Publier le Produit
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. CATEGORY MODAL (Add / Edit) -->
+  <div class="modal-overlay" id="categoryModalOverlay">
+    <div class="admin-modal-body">
+      <button class="modal-close-btn" onclick="closeCategoryModal()">&times;</button>
+      <h3 class="modal-header-title" id="categoryModalTitle">Ajouter une Catégorie</h3>
+
+      <form id="categoryForm">
+        <input type="hidden" id="catId" value="" />
+
+        <div class="form-group">
+          <label class="form-label">Nom de la Catégorie *</label>
+          <input type="text" id="catName" class="form-control" required placeholder="ex: Skincare" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Slug (URL)</label>
+          <input type="text" id="catSlug" class="form-control" placeholder="ex: skincare" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea id="catDescription" class="form-control" rows="3" placeholder="Brève description..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+          <i class="fa-solid fa-floppy-disk"></i> Enregistrer la Catégorie
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/animations.js"></script>
+  <script src="js/admin.js"></script>
+
+</body>
+</html>

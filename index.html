@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BeautyHub | Cosmétiques & Skincare de Luxe (France & Corée)</title>
+  <meta name="description" content="Découvrez le meilleur des produits cosmétiques, maquillage et soins skincare haut de gamme en provenance directe de France et de Corée du Sud." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- 1. Header & Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">B</div>
+        <div>
+          <span class="logo-text">BeautyHub</span>
+          <span class="logo-subtitle">Luxury Cosmetic</span>
+        </div>
+      </a>
+
+      <!-- Live Search Bar -->
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input id="searchInput" type="text" class="search-input" placeholder="Rechercher un produit, marque..." />
+      </div>
+
+      <!-- Actions (Cart, Admin link) -->
+      <div class="nav-actions">
+        <button id="cartToggleBtn" class="icon-btn" title="Panier d'achat">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cartBadgeCount" class="badge-count">0</span>
+        </button>
+
+        <a href="admin.html" class="admin-link-btn" title="Accéder au Dashboard d'Administration">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Dashboard Admin</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Hero 3D Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-gem"></i> Édition Haute Cosmétique
+          </div>
+          <h1 class="hero-title text-gradient-gold">
+            L'Excellence du Soin & de la Beauté
+          </h1>
+          <p class="hero-desc">
+Explorez une sélection raffinée de parfums, soins et maquillage, réunissant des créations iconiques et des pépites beauté du monde entier.          </p>
+          <div class="hero-ctas">
+            <a href="#catalog" class="btn-primary">
+              Explorer le Catalogue <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Real WebGL 3D Canvas Stage -->
+        <div class="hero-canvas-container" id="hero-3d-canvas-container">
+          <div class="canvas-hint"><i class="fa-solid fa-cube"></i> Studio 3D WebGL Interactif • Faites pivoter</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Filter Section & Catalog -->
+    <section class="filter-section container" id="catalog">
+      <div class="section-header">
+        <span class="section-tag">Collection Exclusive</span>
+        <h2 class="section-title text-gradient-rose">Nos Produits d'Exception</h2>
+      </div>
+
+      <div class="filter-wrapper glass-panel">
+        <!-- Category Pills -->
+        <div class="category-pills" id="categoryPillsContainer">
+          <button class="pill-btn active" data-category="all">Tous les produits</button>
+          <button class="pill-btn" data-category="makeup">Makeup</button>
+          <button class="pill-btn" data-category="skincare">Skincare</button>
+          <button class="pill-btn" data-category="parfum">Parfum</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Dynamic Cards inserted via JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- 4. Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3 class="cart-title font-serif">Mon Panier <span id="cartTitleCount">(0)</span></h3>
+        <button class="close-btn" id="closeCartBtn">&times;</button>
+      </div>
+
+      <div class="cart-body" id="cartBody">
+        <!-- Dynamic Cart Items -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span>Total :</span>
+          <span id="cartSubtotalAmount">0.00 DH</span>
+        </div>
+        <button class="btn-checkout" id="checkoutBtn">
+          Commander Maintenant <i class="fa-solid fa-credit-card"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Quick View Modal with 3D Bottle Scene -->
+  <div class="modal-overlay" id="quickviewModalOverlay">
+    <div class="quickview-modal">
+      <button class="modal-close-btn" id="closeQuickviewBtn">&times;</button>
+
+      <!-- 3D Bottle Stage inside Modal -->
+      <div class="modal-3d-stage" id="modal3dStage">
+        <!-- Three.js Canvas inserted here -->
+      </div>
+
+      <div class="modal-info">
+        <div class="modal-category" id="modalCategory">Category</div>
+        <h2 class="modal-title font-serif" id="modalTitle">Product Title</h2>
+        <div class="modal-price" id="modalPrice">0.00 DH</div>
+        <p class="modal-desc" id="modalDesc">Description du produit...</p>
+        <div style="margin-bottom: 1.5rem;">
+          <span class="origin-badge france" id="modalOriginBadge">🇫🇷 Origine France</span>
+          <span style="color: var(--text-muted); font-size: 0.85rem; margin-left: 1rem;" id="modalStock">En Stock</span>
+        </div>
+        <button class="btn-primary" id="modalAddToCartBtn" style="width: 100%; justify-content: center;">
+          <i class="fa-solid fa-cart-shopping"></i> Ajouter au Panier
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/three-scene.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

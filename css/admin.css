@@ -1,0 +1,391 @@
+/* frontend/css/admin.css - Modern & Aesthetic Admin Dashboard Styles */
+
+.admin-body {
+  background-color: #0b060d;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.admin-header {
+  background: rgba(20, 10, 22, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-rose);
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  background: rgba(244, 114, 182, 0.15);
+  border: 1px solid var(--accent-rose-bright);
+  border-radius: 20px;
+  color: var(--accent-rose-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.back-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.3rem;
+  background: rgba(255, 241, 242, 0.06);
+  border: 1px solid var(--border-rose);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-store-btn:hover {
+  background: rgba(244, 114, 182, 0.15);
+  border-color: var(--accent-rose-bright);
+  color: var(--accent-rose-light);
+}
+
+/* Stats Cards Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-rose);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-rose-bright);
+  box-shadow: var(--glow-rose);
+}
+
+.stat-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 1.2rem;
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.2), rgba(190, 18, 60, 0.2));
+  border: 1px solid var(--border-rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-rose-bright);
+  font-size: 1.6rem;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-rose);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Admin Action Banner & Tabs */
+.admin-tabs-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-rose);
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.tab-btns {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.tab-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  background: rgba(255, 241, 242, 0.04);
+  border: 1px solid var(--border-rose);
+  color: var(--text-rose);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  background: linear-gradient(135deg, var(--accent-rose-bright), var(--accent-burgundy));
+  color: #fff;
+  border-color: var(--accent-rose-bright);
+  box-shadow: var(--glow-rose);
+}
+
+/* PROMINENT HIGHLY VISIBLE "AJOUTER UN PRODUIT" BUTTON */
+.btn-add-prominent {
+  padding: 0.85rem 2rem;
+  background: linear-gradient(135deg, #fb7185 0%, #e11d48 50%, #881337 100%);
+  border: 1px solid #fecdd3;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 0 25px rgba(251, 113, 133, 0.6), 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s var(--ease-out);
+}
+
+.btn-add-prominent:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 35px rgba(251, 113, 133, 0.8), 0 15px 30px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+}
+
+.btn-add-prominent i {
+  font-size: 1.1rem;
+}
+
+/* Data Tables */
+.table-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-rose);
+  border-radius: 1.25rem;
+  overflow-x: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  background: rgba(255, 241, 242, 0.04);
+  padding: 1.1rem 1.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-rose-light);
+  border-bottom: 1px solid var(--border-rose);
+}
+
+.admin-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(244, 114, 182, 0.08);
+  color: #fff;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(244, 114, 182, 0.06);
+}
+
+.table-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  border: 1px solid var(--border-rose);
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.btn-edit-sm {
+  padding: 0.45rem 0.95rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25 ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn-edit-sm:hover {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.btn-delete-sm {
+  padding: 0.45rem 0.95rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(243, 166, 166, 0.4);
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.btn-delete-sm:hover {
+  background: #ef4444;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* OVERHAULED ADMIN MODALS & FORM SECTIONS */
+.admin-modal-body {
+  padding: 2.5rem;
+  max-width: 680px;
+  width: 92%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #170a1a;
+  border: 1px solid var(--accent-rose-bright);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), var(--glow-rose);
+}
+
+.modal-header-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.modal-header-subtitle {
+  font-size: 0.85rem;
+  color: var(--accent-rose-light);
+  opacity: 0.8;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-rose);
+}
+
+.form-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-rose-bright);
+  margin: 1.4rem 0 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-rose-light);
+  margin-bottom: 0.45rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  background: rgba(255, 241, 242, 0.05);
+  border: 1px solid var(--border-rose);
+  border-radius: 0.75rem;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--accent-rose-bright);
+  background: rgba(255, 241, 242, 0.1);
+  box-shadow: var(--glow-rose);
+}
+
+select.form-control option {
+  background: #170a1a;
+  color: #fff;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* Image Upload Drag & Drop Preview Zone */
+.upload-preview-box {
+  background: rgba(255, 241, 242, 0.03);
+  border: 2px dashed var(--border-rose);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.upload-preview-box:hover {
+  border-color: var(--accent-rose-bright);
+  background: rgba(244, 114, 182, 0.08);
+}
+
+.upload-preview-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-rose);
+  margin-bottom: 0.6rem;
+}
+
+.upload-icon-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-rose-light);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .admin-modal-body { padding: 1.5rem; }
+  .btn-add-prominent { width: 100%; justify-content: center; }
+}

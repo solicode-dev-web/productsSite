@@ -1,0 +1,151 @@
+/* frontend/css/main.css - BeautyHub Feminine & Luxury Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  /* Feminine & Luxury Color Palette */
+  --bg-dark: #0c070e;
+  --bg-dark-secondary: #160b18;
+  --bg-card: rgba(26, 14, 28, 0.75);
+  --bg-card-hover: rgba(38, 20, 42, 0.9);
+  --bg-glass: rgba(255, 241, 242, 0.05);
+  --border-glass: rgba(244, 114, 182, 0.15);
+  --border-rose: rgba(251, 113, 133, 0.35);
+  --border-gold: rgba(245, 158, 11, 0.3);
+  
+  --accent-rose: #f472b6;
+  --accent-rose-light: #fbcfe8;
+  --accent-rose-bright: #fb7185;
+  --accent-burgundy: #be123c;
+  --accent-burgundy-dark: #881337;
+  --accent-cream: #faf5f0;
+  --accent-gold: #f59e0b;
+  --accent-gold-light: #fef08a;
+  
+  --text-main: #fff1f2;
+  --text-muted: #d8b4fe;
+  --text-rose: #fbcfe8;
+
+  /* Shadows & Glows */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --glow-rose: 0 0 25px rgba(244, 114, 182, 0.35);
+  --glow-burgundy: 0 0 25px rgba(190, 18, 60, 0.4);
+  --glow-gold: 0 0 20px rgba(245, 158, 11, 0.3);
+
+  /* Typography */
+  --font-display: 'Italiana', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(244, 114, 182, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 50%, rgba(190, 18, 60, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(251, 113, 133, 0.06) 0%, transparent 55%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 114, 182, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-rose-bright);
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Typography Utility */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, #ffffff 0%, #fbcfe8 45%, #fb7185 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cream {
+  background: linear-gradient(135deg, #ffffff 0%, #faf5f0 50%, #fef08a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-rose);
+  border-radius: 1.25rem;
+}
+
+/* Section Titles */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-rose-light);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
